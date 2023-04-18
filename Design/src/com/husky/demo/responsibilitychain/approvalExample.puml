@@ -1,0 +1,32 @@
+@startuml
+
+interface Approval {
+    next(Approval): void
+    doHandle(Integer) : boolean
+}
+
+class DepartmentLeader {
+    doHandle(Integer) : boolean
+}
+
+class Manager {
+    doHandle(Integer) : boolean
+}
+
+class Boss {
+    doHandle(Integer) : boolean
+}
+
+class Client{
+
+}
+
+Approval *-- Approval
+Approval <|-- DepartmentLeader
+Approval <|-- Manager
+Approval <|-- Boss
+DepartmentLeader <|.. Client : use
+Manager <|.. Client : use
+Boss <|.. Client : use
+
+@enduml

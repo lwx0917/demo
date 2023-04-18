@@ -1,0 +1,25 @@
+@startuml
+
+interface Handle {
+    + next(Handle):void
+    + doHandle(Type):void
+}
+
+class concreteHandle1 {
+    + doHandle(Type):void
+}
+
+class concreteHandle2 {
+    + doHandle(Type):void
+}
+
+class Client {
+
+}
+
+Handle *-- Handle
+Handle <|-- concreteHandle1
+Handle <|-- concreteHandle2
+concreteHandle1 <|.. Client : use
+concreteHandle2 <|.. Client : use
+@enduml

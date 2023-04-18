@@ -1,0 +1,10 @@
+server:
+  port: 9001
+
+es:
+  host: 192.168.8.9
+  port: 9200
+
+logging:
+  level:
+    com.husky.demo: debug
